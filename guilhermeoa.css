@@ -9,7 +9,7 @@
 body {
   margin: 0;
   font-family: "Inter", sans-serif;
-  background-color:  linear-gradient(135deg, #e8eefc, #f9fbff);
+  background: linear-gradient(135deg, #e8eefc, #f9fbff);
   color: var(--text);
   min-height: 100vh;
   display: flex;
@@ -84,37 +84,52 @@ footer {
   font-size: 14px;
 }
 
+/* Estilo para a tabela de jogos */
+table.jogos {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+table.jogos th,
+table.jogos td {
+  padding: 12px;
+  text-align: center;
+  border: 1px solid #dbeafe;
+}
+
+table.jogos tr:first-child td {
+  background-color: var(--primary);
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+table.jogos tr:nth-child(even) {
+  background-color: #f9fbff;
+}
+
+table.jogos tr:hover {
+  background-color: #e0e7ff;
+  transition: 0.3s;
+}
+
+table.jogos img {
+  border-radius: 8px;
+  transition: transform 0.3s;
+}
+
+table.jogos img:hover {
+  transform: scale(1.05);
+}
+
 /* Responsividade */
 @media (max-width: 600px) {
   nav ul {
     flex-direction: column;
   }
 }
-
-
-  
-    button {
-      margin: 10px;
-      padding: 10px 20px;
-      font-size: 16px;
-      cursor: pointer;
-      border: none;
-      border-radius: 5px;
-      background-color: #4CAF50;
-      color: white;
-      transition: 0.3s;
-    }
-
-    button:hover {
-      background-color: #45a049;
-    }
-
-    /* Classe que faz o barrel roll */
-    .barrel-roll {
-      animation: barrelRoll 2s ease-in-out;
-    }
-
-    @keyframes barrelRoll {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
