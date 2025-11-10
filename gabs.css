@@ -1,0 +1,200 @@
+/* Variáveis para cores */
+:root {
+    --dark-grey: #1a1a1a; /* Fundo principal */
+    --mid-grey: #2c2c2c; /* Elementos secundários/cartões */
+    --light-grey: #f0f0f0; /* Texto claro */
+    --purple-primary: #7f00ff; /* Roxo vibrante - Cor de destaque */
+    --purple-secondary: #5e00c7; /* Roxo para hover/detalhes */
+}
+
+/* Reset Básico e Fontes */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Incluí Poppins no HTML, vamos usá-la */
+    font-family: 'Poppins', sans-serif; 
+}
+
+body {
+    background-color: var(--dark-grey);
+    color: var(--light-grey);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* --- Cabeçalho e Navegação --- */
+header {
+    background-color: var(--mid-grey);
+    padding: 20px 5%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end; /* Alinha a navegação à direita */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: var(--light-grey);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1em;
+    padding: 5px 10px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* Efeito de destaque ao passar o mouse (underline roxo) */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--purple-primary);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--purple-primary);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* --- Seção Principal (Hero) --- */
+.hero-section {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 0 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    min-height: 60vh;
+}
+
+.info {
+    flex: 1;
+    max-width: 600px;
+}
+
+.info h1 {
+    font-size: 3.5em;
+    font-weight: 700;
+    margin-bottom: 10px;
+    /* Destaque roxo no nome */
+    color: var(--purple-primary); 
+    text-shadow: 0 0 10px rgba(127, 0, 255, 0.5); 
+}
+
+.info p {
+    font-size: 1.5em;
+    font-weight: 300;
+    margin-bottom: 30px;
+    color: #cccccc;
+}
+
+/* --- Links de Redes Sociais --- */
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.social-links img {
+    width: 40px; /* Ajusta o tamanho dos ícones */
+    height: 40px;
+    /* Filtro para colorir o ícone de cinza para roxo ao passar o mouse */
+    filter: grayscale(100%) brightness(1.5);
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.social-links a:hover img {
+    transform: translateY(-5px) scale(1.1);
+    filter: drop-shadow(0 0 5px var(--purple-primary)); /* Sombra para o efeito roxo */
+}
+
+/* --- Imagem de Perfil --- */
+.profilepicture {
+    flex-shrink: 0; /* Impede que a imagem encolha */
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    border: 5px solid var(--purple-primary); /* Borda roxa de destaque */
+    box-shadow: 0 0 20px rgba(127, 0, 255, 0.6); /* Sombra roxa moderna */
+}
+
+.profilepicture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* --- Rodapé --- */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--mid-grey);
+    color: #aaaaaa;
+    font-size: 0.9em;
+    margin-top: 50px;
+}
+
+/* --- Responsividade --- */
+@media (max-width: 900px) {
+    .hero-section {
+        flex-direction: column; /* Pilha vertical em telas menores */
+        text-align: center;
+        margin-top: 50px;
+    }
+
+    .profilepicture {
+        order: -1; /* Move a imagem para cima na pilha */
+        margin-bottom: 40px;
+        width: 250px;
+        height: 250px;
+    }
+
+    .info h1 {
+        font-size: 2.5em;
+    }
+
+    .info p {
+        font-size: 1.2em;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    header {
+        padding: 15px 5%;
+    }
+    
+    .info {
+        padding: 0 5%;
+    }
+}
