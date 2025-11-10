@@ -1,0 +1,162 @@
+/* === Estilo principal: Tema Fantasmas (Preto e Vermelho) === */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Roboto:wght@300;400&display=swap');
+
+:root {
+  --bg-dark: #0b0b0b;
+  --bg-light: #1a1a1a;
+  --red: #c20000;
+  --text: #e0e0e0;
+  --accent: #ff1a1a;
+  --shadow: rgba(255, 0, 0, 0.25);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* === Cabeçalho === */
+header {
+  background: linear-gradient(to right, #000000, #1a0000);
+  color: var(--accent);
+  text-align: center;
+  padding: 20px;
+  box-shadow: 0 0 20px var(--shadow);
+  border-bottom: 2px solid var(--red);
+}
+
+header h1 {
+  font-family: 'Cinzel Decorative', cursive;
+  font-size: 2em;
+  letter-spacing: 2px;
+  text-shadow: 0 0 15px var(--red);
+}
+
+/* === Navegação === */
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 15px 0 0 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+nav a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+  background-color: var(--red);
+  color: #fff;
+  box-shadow: 0 0 10px var(--shadow);
+}
+
+/* === Seções principais === */
+main {
+  padding: 40px;
+  background: var(--bg-light);
+}
+
+section {
+  margin-bottom: 60px;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 25px;
+  border-left: 4px solid var(--red);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+section:hover {
+  transform: scale(1.01);
+  box-shadow: 0 0 25px rgba(255, 0, 0, 0.3);
+}
+
+section h2, section h3 {
+  font-family: 'Cinzel Decorative', cursive;
+  color: var(--accent);
+  text-shadow: 0 0 10px var(--shadow);
+}
+
+section p, section li, section td, section th {
+  font-size: 1rem;
+}
+
+/* === Tabelas === */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+th, td {
+  border: 1px solid var(--red);
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: #1a0000;
+  color: var(--accent);
+  text-shadow: 0 0 5px var(--shadow);
+}
+
+tr:nth-child(even) {
+  background-color: #111;
+}
+
+tr:hover {
+  background-color: #220000;
+  transition: 0.2s;
+}
+
+/* === Lista de evidências === */
+#ul-evidences {
+  list-style-type: square;
+  margin-left: 20px;
+}
+
+#ul-evidences li {
+  margin-bottom: 8px;
+}
+
+/* === Rodapé === */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #000;
+  border-top: 2px solid var(--red);
+  color: #aaa;
+  font-size: 0.9em;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* === Efeitos especiais === */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(circle at 50% 10%, rgba(255,0,0,0.05), transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+main, header, footer {
+  position: relative;
+  z-index: 1;
+}
