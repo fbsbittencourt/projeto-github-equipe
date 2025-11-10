@@ -1,8 +1,8 @@
- const body = document.body;
+    const body = document.body;
     let textoAumentado = false; // estado inicial
 
-    // 1️⃣ Girar o site
-       document.getElementById('btnBarrel').addEventListener('click', () => {
+    // 1️⃣ DO A BARREL ROLL!
+    document.getElementById('btnBarrel').addEventListener('click', () => {
       body.classList.add('barrel-roll');
       // remove a classe depois da animação pra poder fazer de novo
       setTimeout(() => {
