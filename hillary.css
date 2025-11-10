@@ -1,0 +1,119 @@
+/* 🎨 Tema: Tom & Jerry — divertido e colorido */
+
+/* Fonte divertida e animada */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Comic+Neue:wght@400;700&display=swap');
+
+body {
+  font-family: 'Comic Neue', cursive;
+  background: linear-gradient(135deg, #ffcc00 20%, #ff9966 80%);
+  color: #333;
+  margin: 0;
+  padding: 0;
+  animation: bgMove 10s infinite alternate ease-in-out;
+}
+
+/* Cabeçalho com vibe de desenho */
+header {
+  background-color: #3366cc;
+  color: #fff;
+  text-align: center;
+  padding: 20px 10px;
+  border-bottom: 6px solid #ffcc00;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+header h1 {
+  font-family: 'Fredoka One', cursive;
+  text-shadow: 2px 2px #ff6600;
+  font-size: 2.2em;
+}
+
+/* Menu divertido */
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 15px 0 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  background-color: #ff6600;
+  padding: 10px 18px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  border: 2px solid transparent;
+}
+
+nav ul li a:hover {
+  background-color: #fff;
+  color: #ff6600;
+  border: 2px solid #ff6600;
+  transform: scale(1.1) rotate(-3deg);
+}
+
+/* Área principal */
+main {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+main h2 {
+  font-family: 'Fredoka One', cursive;
+  color: #3366cc;
+  text-shadow: 2px 2px #ffcc00;
+  font-size: 2em;
+}
+
+main p {
+  background-color: #fff;
+  display: inline-block;
+  margin: 10px;
+  padding: 10px 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  transition: transform 0.2s ease;
+}
+
+main p:hover {
+  transform: scale(1.1);
+  background-color: #ffefcc;
+}
+
+/* Rodapé fofo */
+footer {
+  background-color: #3366cc;
+  color: #fff;
+  text-align: center;
+  padding: 15px 0;
+  font-size: 0.9em;
+  border-top: 5px solid #ff6600;
+  font-weight: bold;
+}
+
+/* Animação de fundo brincalhona */
+@keyframes bgMove {
+  0% { background-position: left top; }
+  100% { background-position: right bottom; }
+}
+
+/* Toque extra: ícone de rato e gato correndo 😹🐭 */
+body::after {
+  content: "🐱💨 🐭💨";
+  position: fixed;
+  bottom: 10px;
+  right: 15px;
+  font-size: 2em;
+  animation: chase 3s infinite linear;
+}
+
+@keyframes chase {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(-20px); }
+  100% { transform: translateX(0); }
+}
+
