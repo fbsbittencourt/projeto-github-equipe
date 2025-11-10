@@ -1,0 +1,244 @@
+/* ==== ESTILO METAL MATHEUS SILVA 🤘 ==== */
+
+/* Fonte inspirada em bandas de metal */
+@import url('https://fonts.googleapis.com/css2?family=Metal+Mania&family=Roboto:wght@300;400;700&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #f5f5f5;
+  background: radial-gradient(circle at top, #1a1a1a 0%, #000 100%);
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* ======= ANIMAÇÃO DE RELÂMPAGOS ======= */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('https://i.etsystatic.com/8237571/r/il/8c57f9/1122748382/il_570xN.1122748382_ok4w.jpg') repeat;
+  opacity: 0;
+  z-index: 1;
+  animation: relampago 6s infinite;
+}
+
+@keyframes relampago {
+  0%, 90%, 100% { opacity: 0; }
+  92% { opacity: 0.3; }
+  93% { opacity: 0.8; }
+  94% { opacity: 0.1; }
+}
+
+/* ======= CABEÇALHO ======= */
+header {
+  background: linear-gradient(90deg, #000000, #1c1c1c);
+  color: #e60000;
+  text-align: center;
+  padding: 40px 15px 25px;
+  border-bottom: 2px solid #e60000;
+  box-shadow: 0 0 30px #e60000;
+  position: relative;
+}
+
+/* LOGO ESTILO METALLICA */
+header::after {
+  content: "";
+  display: block;
+  width: 150px;
+  height: 5px;
+  background: linear-gradient(90deg, transparent, #e60000, transparent);
+  margin: 15px auto 0;
+  box-shadow: 0 0 20px #e60000;
+  animation: pulsar 2s infinite ease-in-out;
+}
+
+@keyframes pulsar {
+  0%, 100% { opacity: 0.6; transform: scaleX(1); }
+  50% { opacity: 1; transform: scaleX(1.5); }
+}
+
+header h1 {
+  font-family: 'Metal Mania', cursive;
+  font-size: 3em;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow: 0 0 20px #e60000;
+  margin-bottom: 5px;
+}
+
+/* ======= MENU ======= */
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+nav li {
+  display: inline;
+  margin: 0 15px;
+}
+
+nav a {
+  color: #ddd;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+  color: #e60000;
+  text-shadow: 0 0 10px #e60000;
+}
+
+/* ======= CONTEÚDO ======= */
+main {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background: rgba(15, 15, 15, 0.95);
+  border: 1px solid #e60000;
+  border-radius: 8px;
+  box-shadow: 0 0 25px rgba(230, 0, 0, 0.4);
+  position: relative;
+}
+
+/* ======= SOBRE ======= */
+.sobre {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.sobre .perfil {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 3px solid #e60000;
+  box-shadow: 0 0 20px #e60000;
+  margin-bottom: 20px;
+}
+
+.sobre h2 {
+  font-family: 'Metal Mania', cursive;
+  font-size: 2.4em;
+  color: #e60000;
+  margin-bottom: 10px;
+}
+
+.sobre p {
+  color: #ccc;
+  line-height: 1.6;
+  font-size: 1.1em;
+}
+
+/* ======= JOGO ======= */
+.jogo {
+  background: #0b0b0b;
+  border: 2px solid #e60000;
+  border-radius: 10px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: inset 0 0 15px #000, 0 0 25px #e60000;
+}
+
+.jogo h2 {
+  font-family: 'Metal Mania', cursive;
+  font-size: 2em;
+  color: #e60000;
+  margin-bottom: 15px;
+}
+
+/* ======= INPUT E BOTÃO ======= */
+#palpite {
+  background: #000;
+  color: #e60000;
+  border: 2px solid #e60000;
+  padding: 10px;
+  font-size: 18px;
+  width: 120px;
+  border-radius: 5px;
+  text-align: center;
+  outline: none;
+  box-shadow: 0 0 10px #e60000;
+}
+
+#btnTentar {
+  background: #e60000;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+  box-shadow: 0 0 15px #e60000;
+  animation: brilhar 2s infinite ease-in-out;
+  transition: transform 0.2s;
+}
+
+#btnTentar:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px #ff0000;
+}
+
+@keyframes brilhar {
+  0%, 100% { box-shadow: 0 0 15px #e60000; }
+  50% { box-shadow: 0 0 30px #ff0000; }
+}
+
+#resultado {
+  margin-top: 20px;
+  font-size: 1.3em;
+  font-weight: bold;
+  text-shadow: 0 0 8px #000;
+}
+
+/* ======= RODAPÉ ======= */
+footer {
+  background: #000;
+  color: #777;
+  text-align: center;
+  padding: 20px;
+  border-top: 2px solid #e60000;
+  letter-spacing: 1px;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* ======= ANIMAÇÃO DE FOGO NO RODAPÉ ======= */
+footer {
+  position: relative;
+  overflow: hidden;
+}
+
+footer::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background: url('https://i.pinimg.com/originals/4e/fe/6c/4efe6c264f8e9e6572710d225f4f53ce.gif') repeat-x;
+  background-size: cover;
+  animation: fogo 3s infinite linear;
+  opacity: 0.9;
+}
+
+@keyframes fogo {
+  from { background-position: 0 0; }
+  to { background-position: 100% 0; }
+}
+
+
