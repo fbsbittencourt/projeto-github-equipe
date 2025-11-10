@@ -16,8 +16,15 @@
 
     // 3️⃣ Aumentar texto
     document.getElementById('btnTexto').addEventListener('click', () => {
-      document.body.style.fontSize = 'larger';
+      if (!textoAumentado) {
+        body.style.fontSize = '20px';
+        textoAumentado = true;
+      } else {
+        body.style.fontSize = '16px';
+        textoAumentado = false;
+      }
     });
+
 
     // 4️⃣ Mostrar alerta
     document.getElementById('btnAlerta').addEventListener('click', () => {
